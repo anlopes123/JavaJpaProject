@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //implementation group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+    implementation group: 'org.firebirdsql.jdbc', name: 'jaybird', version: '4.0.3.java11'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.32.Final'
+    compileOnly group: 'org.hibernate', name: 'hibernate-jpamodelgen', version: '5.5.5.Final'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+    annotationProcessor('org.hibernate:hibernate-jpamodelgen:5.5.5.final')
+}
+
+
+
+test {
+    useJUnitPlatform()
+}

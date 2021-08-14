@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+             xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="jpa01" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- Aqui são listadas todas as entidades a serem persistidas -->
+        <class>digital.innovation.one.persistencia.Aluno</class>
+        <class>digital.innovation.one.persistencia.Estado</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.firebirdsql.jdbc.FBDriver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:firebirdsql:localhost/3050:D:\\dioJava\\projetos\\ProjetoBD\\BD\\DIGITALINNOVATION.FDB"/>
+            <property name="javax.persistence.jdbc.user" value="SYSDBA" />
+            <property name="javax.persistence.jdbc.password" value="masterkey" />
+            <!-- Configurações específicas do Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.FirebirdDialect" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
